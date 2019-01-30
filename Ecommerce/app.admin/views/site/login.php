@@ -4,7 +4,10 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
-use yii\helpers\Html;
+// Html provides a set of static methods for generating commonly uesd HTML tags
+use yii\helpers\Html; 
+
+// ActiveForm is a widget that builds an interactive HTML form for one or mutiple date models
 use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
