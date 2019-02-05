@@ -32,8 +32,8 @@ return [
     'Development' => [
         'path' => 'dev',
         'setWritable' => [
-            'app.admin/runtime',
-            'app.admin/web/assets',
+            'admin/runtime',
+            'admin/web/assets',
             'app.member/runtime',
             'app.member/web/assets',
             'app.public/runtime',
@@ -46,7 +46,7 @@ return [
             'yii_test',
         ],
         'setCookieValidationKey' => [
-            'app.admin/config/main-local.php',
+            'admin/config/main-local.php',
             'app.member/config/main-local.php',
             'app.public/config/main-local.php',
             'app.seller/config/main-local.php',
@@ -55,8 +55,8 @@ return [
     'Production' => [
         'path' => 'prod',
         'setWritable' => [
-            'app.admin/runtime',
-            'app.admin/web/assets',
+            'admin/runtime',
+            'admin/web/assets',
             'app.member/runtime',
             'app.member/web/assets',
             'app.public/runtime',
@@ -68,7 +68,7 @@ return [
             'yii',
         ],
         'setCookieValidationKey' => [
-            'app.admin/config/main-local.php',
+            'admin/config/main-local.php',
             'app.member/config/main-local.php',
             'app.public/config/main-local.php',
             'app.seller/config/main-local.php',

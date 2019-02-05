@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
+use admin\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -27,6 +27,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <!-- Navbar-->
     <?php
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
@@ -57,7 +58,13 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a class="active" href="/categories">Categories</a>
+    </div>
+
+    <!-- Body -->
+    <div class="container content">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

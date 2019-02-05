@@ -1,11 +1,13 @@
 <?php
-namespace backend\controllers;
+namespace admin\controllers;
 
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use admin\models\SignupForm;
+use admin\models\CategoryForm;
 
 /**
  * Site controller
@@ -60,7 +62,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        // return $this->render('index');
+        $model = new CategoryForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->category()) {
+                    return $this->goHome();
+                
+            }
+        }
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -97,4 +110,27 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+    }
+
+
 }

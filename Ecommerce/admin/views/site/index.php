@@ -1,22 +1,32 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $model \admin\models\SignupForm */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use admin\models\SignupForm;
+
 
 $this->title = 'My Yii Application';
+
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
+ <!--    <div class="jumbotron">
         <h1>Congratulations!</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
-
+ -->
     <div class="body-content">
-
         <div class="row">
+            
+        </div>
+
+        <!-- <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
@@ -46,6 +56,20 @@ $this->title = 'My Yii Application';
                     fugiat nulla pariatur.</p>
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-lg-5">
+                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+
+                    <?= $form->field($model, 'categoryname')->textInput(['autofocus' => true]) ?>
+
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    </div>
+
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
 
